@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 Northstar Servers
+  p Players online: #{count}
+  p Servers: #{serverCount}
+  
+  //Titanfall Northstar : tables.pug
+  table(style='width:70%; margin-left:15%; margin-right:15%;'  border='1')
+    tr 
+      th Name
+      th Description 
+      th Players
+      th Map 
+    tr
+      for server in data
+        td #{server.name}
+        td #{server.description}
+        td #{server.playerCount} / #{server.maxPlayers}
+        td #{server.map}
+        tr
